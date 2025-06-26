@@ -4,7 +4,11 @@
   --secondry-color: #e2dcde;
   --tetiary-color: #00b761;
   --danger-color: #e71d36;
-  --font: helvetica;
+  --font: monospace;
+}
+
+svg g {
+  stroke: var(--primary-color);
 }
 
 body {
@@ -21,9 +25,12 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-inline: 50px;
+  background-color: transparent;
   height: 70px;
+  width: auto;
+  padding-inline: 50px;
+  z-index: 999;
+  align-items: center;
 }
 
 .control-bar {
@@ -31,7 +38,7 @@ header {
   height: 40px;
   width: fit-content;
   background-color: rgba(0, 0, 0, 0.01);
-  border: 0.4px solid rgba(94, 101, 114, 0.3);
+  border: 0.4px solid var(--primary-color);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -42,12 +49,13 @@ header {
   top: 15%;
   left: 50%;
   transform: translate(-50%);
+  z-index: 500;
 }
 
 .mode-nav,
 .time-nav,
 .words-nav {
-  border-right: 1px solid rgba(94, 101, 114, 0.4);
+  border-right: 1px solid var(--primary-color);
   display: flex;
   justify-content: space-evenly;
   gap: 25px;
@@ -66,7 +74,7 @@ header {
 nav button {
   font-family: var(--font);
   font-size: 12px;
-  color: rgb(94, 101, 114);
+  color: var(--primary-color);
   background-color: transparent;
   border: none;
 }
@@ -174,7 +182,7 @@ img {
   width: 200px;
   height: auto;
   padding: 30px;
-  border: 0.4px solid rgba(94, 101, 114, 0.3);
+  border: 0.4px solid var(--primary-color);
   border-radius: 8px;
   justify-content: center;
 }
@@ -182,7 +190,7 @@ img {
 .divider {
   height: 0;
   width: auto;
-  border-top: 0.4px solid rgba(94, 101, 114, 0.3);
+  border-top: 0.4px solid var(--primary-color);
 }
 
 .wpm-results {
@@ -205,7 +213,7 @@ img {
   height: 30px;
   width: auto;
   background-color: transparent;
-  border: 0.4px solid rgba(94, 101, 114, 0.3);
+  border: 0.4px solid var(--primary-color);
   border-radius: 4px;
   color: var(--secondry-color);
   margin-top: 16px;
@@ -217,7 +225,7 @@ img {
   display: flex;
   flex-direction: column;
   background-color: transparent;
-  border: 0.4px solid rgba(94, 101, 114, 0.3);
+  border: 0.4px solid var(--primary-color);
   border-radius: 7px;
   gap: 8px;
 }
@@ -226,12 +234,14 @@ img {
   position: absolute;
   top: 60px;
   right: 80px;
+  z-index: 999;
 }
 
 .font-dropdown {
   position: absolute;
   top: 60px;
   right: 110px;
+  z-index: 999;
 }
 
 .dropdown a {
@@ -241,4 +251,25 @@ img {
 
 .dropdown a:hover {
   color: var(--secondry-color);
+}
+
+.screen-block {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+  color: var(--secondry-color);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 888;
+}
+
+.screen-block p {
+  width: auto;
+  height: auto;
+  margin-top: -140px;
+  font-size: 24px;
+  color: var(--secondry-color) j;
 }

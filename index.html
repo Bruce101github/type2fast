@@ -1,111 +1,231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-        <title>Type2Fast – Online Typing Practice App to Improve Speed, Accuracy & Focus</title>
+    <title>
+      Type2Fast – Online Typing Practice App to Improve Speed, Accuracy & Focus
+    </title>
   </head>
   <body>
-        <header>
-            <div class="logo"></div>
-            <nav>
-                <button id="font-btn">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                    <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M8 6C8.39214 6 8.7481 6.2292 8.91037 6.5862L12.5467 14.5862L13.9104 17.5862C14.1389 18.089 13.9166 18.6818 13.4138 18.9104C12.911 19.1389 12.3182 18.9166 12.0896 18.4138L10.9925 16H5.00755L3.91037 18.4138C3.68183 18.9166 3.08898 19.1389 2.5862 18.9104C2.08342 18.6818 1.8611 18.089 2.08963 17.5862L3.45327 14.5862L7.08963 6.5862C7.2519 6.2292 7.60786 6 8 6ZM5.91664 14H10.0834L8 9.41661L5.91664 14ZM16.707 15.3549C16.2585 15.6448 16.0634 15.9602 16.0224 16.1547C15.9792 16.3596 16.008 16.4651 16.029 16.5152C16.0521 16.57 16.1006 16.6393 16.2107 16.7156C16.4571 16.8864 16.8859 17 17.3347 17C17.9161 17 18.4692 16.8357 18.8826 16.5775C19.3001 16.3167 19.5071 16.0087 19.5634 15.7419C19.5966 15.5845 19.5583 15.4194 19.3761 15.2524C19.1802 15.0728 18.8059 14.8966 18.251 14.8966C17.6954 14.8966 17.1379 15.0763 16.707 15.3549ZM15.6211 13.6753C16.3569 13.1996 17.2885 12.8966 18.251 12.8966C18.87 12.8966 19.4569 13.0231 19.9637 13.266L19.9985 12.8995C19.9871 12.7773 19.9067 12.5852 19.62 12.3839C19.3103 12.1663 18.8294 12 18.251 12C17.2391 12 16.6597 12.4754 16.5358 12.7716C16.3227 13.2811 15.7369 13.5214 15.2274 13.3083C14.7178 13.0952 14.4775 12.5094 14.6906 11.9999C15.2368 10.6942 16.7657 10 18.251 10C19.1909 10 20.0845 10.266 20.7697 10.7473C21.4519 11.2265 22 11.9835 22 12.931C22 12.9626 21.9985 12.9941 21.9955 13.0255L21.5374 17.8531C21.4852 18.4029 20.9972 18.8063 20.4474 18.7541C20.166 18.7274 19.9229 18.5866 19.7597 18.3817C19.0473 18.7803 18.1966 19 17.3347 19C16.6381 19 15.7631 18.8388 15.0713 18.3593C14.7122 18.1104 14.383 17.7607 14.1852 17.29C13.9854 16.8145 13.9503 16.2881 14.0654 15.7419C14.2535 14.8501 14.9029 14.1397 15.6211 13.6753Z" fill="#5e6572"/> </g>
-                    </svg>
-                </button>
-                <button id="theme-btn">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                    <g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="9" stroke="#5e6572" stroke-width="2"/> <path d="M18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12C3 14.3869 3.94821 16.6761 5.63604 18.364L12 12L18.364 5.63604Z" fill="#5e6572"/> </g>
-                    </svg>
-                </button>
-                <button id="sound-icon">
-                        <svg class="hide" id="sound-off"width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                        <g id="SVGRepo_iconCarrier"> <path d="M3.15838 13.9306C2.44537 12.7423 2.44537 11.2577 3.15838 10.0694V10.0694C3.37596 9.70674 3.73641 9.45272 4.1511 9.36978L5.84413 9.03117C5.94499 9.011 6.03591 8.95691 6.10176 8.87788L8.17085 6.39498C9.3534 4.97592 9.94468 4.26638 10.4723 4.45742C11 4.64846 11 5.57207 11 7.41928L11 16.5807C11 18.4279 11 19.3515 10.4723 19.5426C9.94468 19.7336 9.3534 19.0241 8.17085 17.605L6.10176 15.1221C6.03591 15.0431 5.94499 14.989 5.84413 14.9688L4.1511 14.6302C3.73641 14.5473 3.37596 14.2933 3.15838 13.9306V13.9306Z" stroke=" #5e6572" stroke-width="2"/> <path d="M15 15L21 9" stroke=" #5e6572" stroke-width="2" stroke-linecap="round"/> <path d="M21 15L15 9" stroke=" #5e6572" stroke-width="2" stroke-linecap="round"/> </g>
-                        </svg>
-                        <svg   class="" id="sound-on" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                        <g id="SVGRepo_iconCarrier"> <path d="M3.15838 13.9306C2.44537 12.7423 2.44537 11.2577 3.15838 10.0694V10.0694C3.37596 9.70674 3.73641 9.45272 4.1511 9.36978L5.84413 9.03117C5.94499 9.011 6.03591 8.95691 6.10176 8.87788L8.17085 6.39498C9.3534 4.97592 9.94468 4.26638 10.4723 4.45742C11 4.64846 11 5.57207 11 7.41928L11 16.5807C11 18.4279 11 19.3515 10.4723 19.5426C9.94468 19.7336 9.3534 19.0241 8.17085 17.605L6.10176 15.1221C6.03591 15.0431 5.94499 14.989 5.84413 14.9688L4.1511 14.6302C3.73641 14.5473 3.37596 14.2933 3.15838 13.9306V13.9306Z" stroke=" #5e6572" stroke-width="2"/> <path d="M15.5355 8.46447C16.4684 9.39732 16.9948 10.6611 17 11.9803C17.0052 13.2996 16.4888 14.5674 15.5633 15.5076" stroke=" #5e6572" stroke-width="2" stroke-linecap="round"/> <path d="M19.6569 6.34314C21.1494 7.83572 21.9916 9.85769 21.9999 11.9685C22.0083 14.0793 21.182 16.1078 19.7012 17.6121" stroke=" #5e6572" stroke-width="2" stroke-linecap="round"/> </g>
-                    </svg>
-                </button>
-                <button>
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                    <g id="SVGRepo_iconCarrier"> <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z" stroke="#5e6572" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z" stroke="#5e6572" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </g>
-                    </svg>
-                </button>
-            </nav>
-        </header>
-        <div class="dropdown theme-dropdown hide" id="theme-dropdown">
-        </div>
-        <div class="dropdown font-dropdown hide" id="font-dropdown">
-        </div>
-        <div class="control-bar" id="control-bar">
-            <nav class="mode-nav">
-                <button id="time-btn">time</button>
-                <button id="words-btn">words</button>
-                <button id="flawless-btn">flawless</button>
-                <button id="endless-btn">endless</button>
-            </nav>
-            <nav class="time-nav" id="time-nav">
-                <button id="15s-btn">15s</button>
-                <button id="30s-btn">30s</button>
-                <button id="60s-btn">60s</button>
-                <button id="120s-btn">120s</button>
-                <button></button>
-            </nav>
-            <nav class="words-nav hide" id="words-nav">
-                <button class="selected" id="25words-btn">25</button>
-                <button id="50words-btn">50</button>
-                <button id="100words-btn">100</button>
-                <button id="250words-btn">250</button>
-                <button></button>
-            </nav>
-            <nav class="content-nav">
-                <button id="punctuations-btn">punctuations</button>
-                <button id="numbers-btn">numbers</button>
-                <button id="custom-content-btn">custom</button>
-            </nav>
-
-        </div>
+    <header>
+      <div class="logo"></div>
+      <nav>
+        <button id="font-btn">
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 6C8.39214 6 8.7481 6.2292 8.91037 6.5862L12.5467 14.5862L13.9104 17.5862C14.1389 18.089 13.9166 18.6818 13.4138 18.9104C12.911 19.1389 12.3182 18.9166 12.0896 18.4138L10.9925 16H5.00755L3.91037 18.4138C3.68183 18.9166 3.08898 19.1389 2.5862 18.9104C2.08342 18.6818 1.8611 18.089 2.08963 17.5862L3.45327 14.5862L7.08963 6.5862C7.2519 6.2292 7.60786 6 8 6ZM5.91664 14H10.0834L8 9.41661L5.91664 14ZM16.707 15.3549C16.2585 15.6448 16.0634 15.9602 16.0224 16.1547C15.9792 16.3596 16.008 16.4651 16.029 16.5152C16.0521 16.57 16.1006 16.6393 16.2107 16.7156C16.4571 16.8864 16.8859 17 17.3347 17C17.9161 17 18.4692 16.8357 18.8826 16.5775C19.3001 16.3167 19.5071 16.0087 19.5634 15.7419C19.5966 15.5845 19.5583 15.4194 19.3761 15.2524C19.1802 15.0728 18.8059 14.8966 18.251 14.8966C17.6954 14.8966 17.1379 15.0763 16.707 15.3549ZM15.6211 13.6753C16.3569 13.1996 17.2885 12.8966 18.251 12.8966C18.87 12.8966 19.4569 13.0231 19.9637 13.266L19.9985 12.8995C19.9871 12.7773 19.9067 12.5852 19.62 12.3839C19.3103 12.1663 18.8294 12 18.251 12C17.2391 12 16.6597 12.4754 16.5358 12.7716C16.3227 13.2811 15.7369 13.5214 15.2274 13.3083C14.7178 13.0952 14.4775 12.5094 14.6906 11.9999C15.2368 10.6942 16.7657 10 18.251 10C19.1909 10 20.0845 10.266 20.7697 10.7473C21.4519 11.2265 22 11.9835 22 12.931C22 12.9626 21.9985 12.9941 21.9955 13.0255L21.5374 17.8531C21.4852 18.4029 20.9972 18.8063 20.4474 18.7541C20.166 18.7274 19.9229 18.5866 19.7597 18.3817C19.0473 18.7803 18.1966 19 17.3347 19C16.6381 19 15.7631 18.8388 15.0713 18.3593C14.7122 18.1104 14.383 17.7607 14.1852 17.29C13.9854 16.8145 13.9503 16.2881 14.0654 15.7419C14.2535 14.8501 14.9029 14.1397 15.6211 13.6753Z"
+                fill="#5e6572"
+              />
+            </g>
+          </svg>
+        </button>
+        <button id="theme-btn">
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <g id="SVGRepo_iconCarrier">
+              <circle cx="12" cy="12" r="9" stroke="#5e6572" stroke-width="2" />
+              <path
+                d="M18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12C3 14.3869 3.94821 16.6761 5.63604 18.364L12 12L18.364 5.63604Z"
+                fill="#5e6572"
+              />
+            </g>
+          </svg>
+        </button>
+        <button id="sound-icon">
+          <svg
+            class="hide"
+            id="sound-off"
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M3.15838 13.9306C2.44537 12.7423 2.44537 11.2577 3.15838 10.0694V10.0694C3.37596 9.70674 3.73641 9.45272 4.1511 9.36978L5.84413 9.03117C5.94499 9.011 6.03591 8.95691 6.10176 8.87788L8.17085 6.39498C9.3534 4.97592 9.94468 4.26638 10.4723 4.45742C11 4.64846 11 5.57207 11 7.41928L11 16.5807C11 18.4279 11 19.3515 10.4723 19.5426C9.94468 19.7336 9.3534 19.0241 8.17085 17.605L6.10176 15.1221C6.03591 15.0431 5.94499 14.989 5.84413 14.9688L4.1511 14.6302C3.73641 14.5473 3.37596 14.2933 3.15838 13.9306V13.9306Z"
+                stroke=" #5e6572"
+                stroke-width="2"
+              />
+              <path
+                d="M15 15L21 9"
+                stroke=" #5e6572"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M21 15L15 9"
+                stroke=" #5e6572"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+          <svg
+            class=""
+            id="sound-on"
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M3.15838 13.9306C2.44537 12.7423 2.44537 11.2577 3.15838 10.0694V10.0694C3.37596 9.70674 3.73641 9.45272 4.1511 9.36978L5.84413 9.03117C5.94499 9.011 6.03591 8.95691 6.10176 8.87788L8.17085 6.39498C9.3534 4.97592 9.94468 4.26638 10.4723 4.45742C11 4.64846 11 5.57207 11 7.41928L11 16.5807C11 18.4279 11 19.3515 10.4723 19.5426C9.94468 19.7336 9.3534 19.0241 8.17085 17.605L6.10176 15.1221C6.03591 15.0431 5.94499 14.989 5.84413 14.9688L4.1511 14.6302C3.73641 14.5473 3.37596 14.2933 3.15838 13.9306V13.9306Z"
+                stroke=" #5e6572"
+                stroke-width="2"
+              />
+              <path
+                d="M15.5355 8.46447C16.4684 9.39732 16.9948 10.6611 17 11.9803C17.0052 13.2996 16.4888 14.5674 15.5633 15.5076"
+                stroke=" #5e6572"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M19.6569 6.34314C21.1494 7.83572 21.9916 9.85769 21.9999 11.9685C22.0083 14.0793 21.182 16.1078 19.7012 17.6121"
+                stroke=" #5e6572"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+        </button>
+        <button>
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z"
+                stroke="#5e6572"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z"
+                stroke="#5e6572"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div class="screen-block hide" id="screen-block">
+      <p>Click anywhere or any key to close dropdown</p>
+    </div>
+    <div class="dropdown theme-dropdown hide" id="theme-dropdown"></div>
+    <div class="dropdown font-dropdown hide" id="font-dropdown"></div>
+    <div class="control-bar" id="control-bar">
+      <nav class="mode-nav">
+        <button id="time-btn">time</button>
+        <button id="words-btn">words</button>
+        <button id="flawless-btn">flawless</button>
+        <button id="endless-btn">endless</button>
+      </nav>
+      <nav class="time-nav" id="time-nav">
+        <button id="15s-btn">15s</button>
+        <button id="30s-btn">30s</button>
+        <button id="60s-btn">60s</button>
+        <button id="120s-btn">120s</button>
+        <button></button>
+      </nav>
+      <nav class="words-nav hide" id="words-nav">
+        <button class="selected" id="25words-btn">25</button>
+        <button id="50words-btn">50</button>
+        <button id="100words-btn">100</button>
+        <button id="250words-btn">250</button>
+        <button></button>
+      </nav>
+      <nav class="content-nav">
+        <button id="punctuations-btn">punctuations</button>
+        <button id="numbers-btn">numbers</button>
+        <button id="custom-content-btn">custom</button>
+      </nav>
+    </div>
     <div class="textarea" id="textarea">
-      <p  class="target-text" id="targetText"></p>
+      <p class="target-text" id="targetText"></p>
     </div>
     <div class="results hide" id="results">
-        <div class="stats-results" id="stats-results">
-            <p class="wpm-results" id="results-wpm">40 WPM</p>
-            <div class="divider"></div>
-            <span class="stats-container">
-                <span>Accuracy</span>
-                <span id="results-accuracy"></span>
-            </span>
-            <div class="divider"></div>
-            <span class="stats-container">
-                <span>Keystrokes</span>
-                <span id="results-keystrokes"></span>
-            </span>
-            <div class="divider"></div>
-            <span class="stats-container">
-                <span>Words</span>
-                <span id="results-words"></span>
-            </span>
-            <div class="divider"></div>
-            <span class="stats-container">
-                <span>Time</span>
-                <span id="results-time"></span>
-            </span>
-            <button  class="share-btn" id="share-btn">Share Results</button>
-            <button class="download-btn" id="download-btn">Download Results</button>
-        </div>
+      <div class="stats-results" id="stats-results">
+        <p class="wpm-results" id="results-wpm">40 WPM</p>
+        <div class="divider"></div>
+        <span class="stats-container">
+          <span>Accuracy</span>
+          <span id="results-accuracy"></span>
+        </span>
+        <div class="divider"></div>
+        <span class="stats-container">
+          <span>Keystrokes</span>
+          <span id="results-keystrokes"></span>
+        </span>
+        <div class="divider"></div>
+        <span class="stats-container">
+          <span>Words</span>
+          <span id="results-words"></span>
+        </span>
+        <div class="divider"></div>
+        <span class="stats-container">
+          <span>Time</span>
+          <span id="results-time"></span>
+        </span>
+        <button class="share-btn" id="share-btn">Share Results</button>
+        <button class="download-btn" id="download-btn">Download Results</button>
+      </div>
     </div>
     <div class="perfomance-and-controls" id="perfomance-and-controls">
       <div class="perfomance">
@@ -123,7 +243,7 @@
         </div>
         <div class="hide" id="word-count-container">
           <label for="word-count">Words</label>
-          <span id="word-count" ></span>
+          <span id="word-count"></span>
         </div>
       </div>
       <div class="controls">
